@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D 角色扮演游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-menu">
+        <button id="new-game-btn">新的开始</button>
+        <button id="load-game-btn">读取存档</button>
+    </div>
+
+    <div id="load-game-menu" style="display: none;">
+        <h2>选择存档</h2>
+        <div id="save-slots"></div>
+    </div>
+
+    <div id="character-selection" style="display: none;">
+        <h2>选择你的角色</h2>
+        <button onclick="selectCharacter(1)">角色1</button>
+        <button onclick="selectCharacter(2)">角色2</button>
+        <button onclick="selectCharacter(3)">角色3</button>
+        <button onclick="selectCharacter(4)">角色4</button>
+    </div>
+
+    <div id="map-selection" style="display: none;">
+        <h2>选择关卡</h2>
+        <button 
+            onmouseover="previewMap('Forest')" 
+            onmouseout="resetPreview()" 
+            onclick="selectMap('Forest')">森林</button>
+        <button 
+            onmouseover="previewMap('Desert')" 
+            onmouseout="resetPreview()" 
+            onclick="selectMap('Desert')">沙漠</button>
+        <button 
+            onmouseover="previewMap('Mountains')" 
+            onmouseout="resetPreview()" 
+            onclick="selectMap('Mountains')">山脉</button>
+        <button 
+            onmouseover="previewMap('City')" 
+            onmouseout="resetPreview()" 
+            onclick="selectMap('City')">城市</button>
+    </div>    
+    <canvas id="gameCanvas" width="1000" height="600" style="display: none;"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
